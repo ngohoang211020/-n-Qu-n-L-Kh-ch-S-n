@@ -1,4 +1,4 @@
-#include "ListCustomer.h"
+﻿#include "ListCustomer.h"
 void ListCustomer::Indanhsach() {
 	cout << "--------------------***CHUONG TRINH QUAN LY Khach San***-----------------------" << endl;
 	for (int i = 0; i < n; i++) {
@@ -28,4 +28,20 @@ void ListCustomer::Add() {
 	*(list + k) = x;
 	this->n++;
 	delete[] nlist;
+}
+void ListCustomer::Delete() {
+	int k;
+	do {
+		cout << "Nhap vi tri can xoa: ";
+		cin >> k;
+		if (k > n || k < 0)	cout << "Vi tri khong ton tai!";
+	} while (k > n || k < 0);
+
+		//Customer* nlist = this->list;
+		//this->list = new Customer[n - 1];
+		for (int i = k; i < n; i++) {
+			*(list + i) = *(list + i + 1);
+		}
+		this->n--;
+		//delete[] nlist;
 }
