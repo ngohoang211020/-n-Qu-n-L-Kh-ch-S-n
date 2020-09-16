@@ -1,4 +1,14 @@
 ﻿#include "Customer.h"
+
+//tinh tổng số ngày từ 0/0/0 đến hiện tại
+int Sumday(int year, int month, int day) {
+	if (month < 3) {
+		year--;
+		month += 12;
+	}
+	return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month - 457) / 5 + day - 306;
+}
+
 void Customer::nhap() {
 	string Mahoadon, Ten, Cmnd, Tenphong; 
 	bool Gioitinh;
@@ -71,17 +81,10 @@ void Customer::nhap() {
 	{
 		cout << "Nhap ngay di:" << endl;
 		Ngaydi.setDate();
-		if (Ngaydi.getYear() < Ngayden.getYear()) {
-			cout << "Nhap thong tin ngay khong dung!!!" << endl;
-		}
-		else if (Ngaydi.getMonth() < Ngayden.getMonth()) {
-			cout << "Nhap thong tin ngay khong dung!!!" << endl;
-		}
-		else if (Ngaydi.getDay() < Ngayden.getDay()) {
-			cout << "Nhap thong tin ngay khong dung!!!" << endl;
-		}
+		int numberOfDays = Sumday(ngaydi.getYear(), ngaydi.getMonth(), ngaydi.getDay()) - Sumday(ngayden.getYear(), ngayden.getMonth(), ngayden.getDay());
+		if (numberOfDays >= 0) { break; }
 		else {
-			break;
+			cout << "Ngay da nhap khong dung!!!" << endl;
 		}
 	} while (true);
 	this->mahoadon = Mahoadon;
@@ -92,15 +95,6 @@ void Customer::nhap() {
 	this->ngayden = Ngayden;
 	this->ngaydi = Ngaydi;
 }
-//tinh tổng số ngày từ 0/0/0 đến hiện tại
-int Sumday(int year, int month, int day) {
-	if (month < 3) {
-		year--;
-		month += 12;
-	}
-	return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month - 457) / 5 + day - 306;
-}
-	
 void Customer::xuat() {
 	string gender;
 	int dongia, tienphong;

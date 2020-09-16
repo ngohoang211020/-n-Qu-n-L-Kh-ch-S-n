@@ -15,19 +15,19 @@ void ListCustomer::Add() {
 	} while (k > n || k < 0);
 
 	Customer x;
-	Customer* nlist = this->list;
+	//Customer* nlist = this->list;
 	cout << "Nhap thong tin nhan vien them vao:";
 	x.nhap();
 	this->list = new Customer[n + 1];
-	for (int i = 0; i < n; i++) {
-		*(list + i) = *(nlist + i);
-	}
+	//for (int i = 0; i < n; i++) {
+	//	*(list + i) = *(nlist + i);
+//	}
 	for (int i = n; i > k; i--) {
 		*(list + i) = *(list + i - 1);
 	}
 	*(list + k) = x;
 	this->n++;
-	delete[] nlist;
+//	delete[] nlist;
 }
 void ListCustomer::Delete() {
 	int k;
