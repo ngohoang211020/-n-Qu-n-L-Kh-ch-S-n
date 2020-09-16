@@ -37,8 +37,6 @@ void ListCustomer::Delete() {
 		if (k > n || k < 0)	cout << "Vi tri khong ton tai!";
 	} while (k > n || k < 0);
 
-		//Customer* nlist = this->list;
-		//this->list = new Customer[n - 1];
 		for (int i = k; i < n; i++) {
 			*(list + i) = *(list + i + 1);
 		}
