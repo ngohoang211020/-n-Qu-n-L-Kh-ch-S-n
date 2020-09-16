@@ -41,5 +41,4 @@ void ListCustomer::Delete() {
 			*(list + i) = *(list + i + 1);
 		}
 		this->n--;
-		//delete[] nlist;
 }
