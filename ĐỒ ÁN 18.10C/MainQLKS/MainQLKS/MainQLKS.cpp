@@ -3,7 +3,8 @@
 int main()
 {
     Customer x;
-    x.nhap();
-    x.xuat();
+	x.nhap();
+	x.xuat();
+
 }
 
