@@ -66,7 +66,7 @@ void Customer::nhap() {
 			cout << "Ten phong da nhap khong phu hop!!" << endl;
 			cout << "Ten phong chi gom 4 ki tu!!" << endl;
 		}
-		else if (Tenphong[0] < 65 || Tenphong[0]>90) {	
+		else if (Tenphong[0] < 65 || Tenphong[0]>90) {	//Cái ni có 3 loại phòng A B C thôi chắc không cần 90 mô hè?
 			cout << "Ten phong da nhap khong phu hop!!" << endl;
 			cout << "Ten phai bat dau bang 1 chu cai in hoa!!" << endl;
 		}
